@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="th">
+<body>
+<h2>ผู้สูงอายุ</h2>
+<ul>
+{% for m in meds %}
+<li>
+{{m[1]}} เวลา {{m[2]}}
+{% if m[3] == 0 %}
+<form method="post" style="display:inline">
+<input type="hidden" name="mid" value="{{m[0]}}">
+<button>กินแล้ว</button>
+</form>
+{% else %}
+✅ กินแล้ว
+{% endif %}
+</li>
+{% endfor %}
+</ul>
+<a href="/caregiver">ไปหน้าผู้ดูแล</a>
+</body>
+</html>
